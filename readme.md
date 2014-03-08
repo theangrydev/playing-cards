@@ -1,4 +1,4 @@
-# Helveticards
+# SCSS-playing-cards
 A deck of cards created in 100% CSS3. There are no images, so cards can scale to any size. Currently, just has the HTML/CSS for each card. Next step is to add the JS to shuffle and deal the cards. 
 
 
