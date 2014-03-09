@@ -1,0 +1,26 @@
+/*------------------------------------*\
+    #CARD
+\*------------------------------------*/
+.b-card {
+	@extend %f-card;
+	@extend %s-card;
+}
+
+.b-card-corner {
+	@extend %f-card-corner;
+}
+
+.b-card-cornerNumber {
+	@extend %f-card-cornerNumber;
+	@extend %s-card-cornerNumber;
+}
+
+.b-card-cornerSuit {
+	@extend %f-card-cornerSuit;
+	@extend %s-card-cornerSuit;
+}
+
+.b-card-pattern {
+	@extend %f-card-pattern;
+	@extend %s-card-pattern;
+}

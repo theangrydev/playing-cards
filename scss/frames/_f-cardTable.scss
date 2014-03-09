@@ -1,7 +1,8 @@
 /*------------------------------------*\
-    #SKINS
+    #CARD TABLE
 \*------------------------------------*/
-/**
- * Pull in all our skins.
- */
-@import "s-card";
+%f-cardTable {
+	height: 100%;
+	position: relative;
+	width: 100%;
+}

@@ -1,0 +1,165 @@
+/*------------------------------------*\
+    #CARD
+\*------------------------------------*/
+
+/* f-card */
+%f-card {
+	float: left;
+	height: 280px;
+	margin: 0 15px 15px 0;
+	position: relative;
+	width: 200px;
+	z-index: 2;
+
+	/* flipped */
+	&.flipped {
+		@include flipped;
+	}
+}
+
+/* f-card-corner */
+$f-card-corner-horizontalOuter: 4%;
+$f-card-corner-verticalOuter: 4%;
+
+%f-card-corner {
+	line-height: 1;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	font-weight: bold;
+
+	/* f-card-corner.top */
+	&.top {
+		left: $f-card-corner-horizontalOuter;
+		top: $f-card-corner-verticalOuter;
+	}
+
+	/* f-card-corner.bottom */
+	&.bottom {
+		@include flipped;
+		bottom: $f-card-corner-verticalOuter;
+		right: $f-card-corner-horizontalOuter;
+	}
+}
+
+
+/* f-card-corner-number */
+%f-card-cornerNumber {
+	font-size: 32px;
+	height: 32px;
+	line-height: 32px;
+
+	.ten & {
+		letter-spacing: -1.8px;
+		margin-left: -4px;
+		padding-right: 0.9px;
+		padding-left: 0.9px;
+	}
+}
+
+/* f-card-corner-suit */
+%f-card-cornerSuit {
+	display: block;
+	font-size: 24px;
+}
+
+/* f-card-pattern */
+$f-card-pattern-horizontalOuter: 15%;
+$f-card-pattern-horizontalMiddle: 38%;
+$f-card-pattern-verticalOuter: 8.58%;
+$f-card-pattern-verticalMiddle: 39.3%;
+$f-card-pattern-verticalMiddleOuterOffset: 25%;
+$f-card-pattern-verticalMiddleInnerOffset: 28.58%;
+
+%f-card-pattern {
+	font-size: 64px;
+	font-weight: bold;
+	height: 60px;
+	line-height: 60px;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	width: 50px;
+
+	&.topCentre {
+		/* topCentre */
+		left: $f-card-pattern-horizontalMiddle;
+		top: $f-card-pattern-verticalOuter;
+	}
+	&.topLeft {
+		/* topLeft */
+		left: $f-card-pattern-horizontalOuter;
+		top: $f-card-pattern-verticalOuter;
+	}
+	&.topRight {
+		/* topRight */
+		right: $f-card-pattern-horizontalOuter;
+		top: $f-card-pattern-verticalOuter;
+	}
+	&.middleCentre {
+		/* middleCentre */
+		left: $f-card-pattern-horizontalMiddle;
+		top: $f-card-pattern-verticalMiddle;
+	}
+	&.middleTop {
+		/* middleTop */
+		left: $f-card-pattern-horizontalMiddle;
+		top: $f-card-pattern-verticalMiddleOuterOffset;
+	}
+	&.middleBottom {
+		/* middleBottom */
+		bottom: $f-card-pattern-verticalMiddleOuterOffset;
+		left: $f-card-pattern-horizontalMiddle;
+		@include flipped;
+	}
+	&.middleLeft {
+		/* middleLeft */
+		left: $f-card-pattern-horizontalOuter;
+		top: $f-card-pattern-verticalMiddle;
+	}
+	&.middleRight {
+		/* middleRight */
+		right: $f-card-pattern-horizontalOuter;
+		top: $f-card-pattern-verticalMiddle;
+	}
+	&.middleTopLeft {
+		/* middleTopLeft */
+		left: $f-card-pattern-horizontalOuter;
+		top: $f-card-pattern-verticalMiddleInnerOffset;
+	}
+	&.middleTopRight {
+		/* middleTopRight */
+		right: $f-card-pattern-horizontalOuter;
+		top: $f-card-pattern-verticalMiddleInnerOffset;
+	}
+	&.middleBottomLeft {
+		/* middleBottomLeft */
+		bottom: $f-card-pattern-verticalMiddleInnerOffset;
+		left: $f-card-pattern-horizontalOuter;
+		@include flipped;
+	}
+	&.middleBottomRight {
+		/* middleBottomRight */
+		bottom: $f-card-pattern-verticalMiddleInnerOffset;
+		right: $f-card-pattern-horizontalOuter;
+		@include flipped;
+	}
+	&.bottomCentre {
+		/* bottomCentre */
+		bottom: $f-card-pattern-verticalOuter;
+		left: $f-card-pattern-horizontalMiddle;
+		@include flipped;
+	}
+	&.bottomLeft {
+		/* bottomLeft */
+		bottom: $f-card-pattern-verticalOuter;
+		left: $f-card-pattern-horizontalOuter;
+		@include flipped;
+	}
+	&.bottomRight {
+		/* bottomRight */
+		bottom: $f-card-pattern-verticalOuter;
+		right: $f-card-pattern-horizontalOuter;
+		@include flipped;
+	}
+}

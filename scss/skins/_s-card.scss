@@ -1,0 +1,117 @@
+/*------------------------------------*\
+    #CARD
+\*------------------------------------*/
+%s-card {
+	background-color: #fff;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+	&.club {
+		color: black;
+	}
+
+	&.spade {
+		color: black;
+	}
+
+	&.diamond {
+		color: red;
+	}
+
+	&.heart {
+		color: red;
+	}
+
+	&.fourColour {
+		&.club {
+			color: green;
+		}
+
+		&.spade {
+			color: black;
+		}
+
+		&.diamond {
+			color: blue;
+		}
+
+		&.heart {
+			color: red;
+		}
+	}
+}
+
+%s-card-pattern,
+%s-card-cornerSuit {
+	.club & {
+		@include club;
+	}
+
+	.spade & {
+		@include spade;
+	}
+
+	.diamond & {
+		@include diamond;
+	}
+
+	.heart & {
+		@include diamond;
+	}
+}
+
+%s-card-cornerNumber {
+	.two & {
+		@include two;	
+	}
+
+	.three & {
+		@include three;
+	}
+
+	.four & {
+		@include four;
+	}
+
+	.five & {
+		@include five;
+	}
+	
+	.six & {
+		@include six;
+	}
+	
+	.seven & {
+		@include seven;
+	}
+	
+	.eight & {
+		@include eight;
+	}
+	
+	.nine & {
+		@include nine;
+	}
+	
+	.ten & {
+		@include ten;
+	}
+	
+	.jack & {
+		@include jack;
+	}
+	
+	.queen & {
+		@include queen;
+	}
+	
+	.king & {
+		@include king;
+	}
+	
+	.ace & {
+		@include ace;
+	}
+}

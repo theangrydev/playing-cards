@@ -1,7 +1,7 @@
 /*------------------------------------*\
-    #SKINS
+    Base heading styles
 \*------------------------------------*/
-/**
- * Pull in all our skins.
- */
-@import "s-card";
+h1 {
+ 	color: red;
+ 	font-size: 96px;
+}
