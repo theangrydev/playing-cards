@@ -1,6 +1,6 @@
 # Intro
 
-This project is a heavily modified version of [Don Park's scalable-css-playing-cards](/zachwaugh/Helveticards) with following notable differences:
+This project is a heavily modified version of [Don Park's scalable-css-playing-cards](/zachwaugh/Helveticards).
 
 # Compatibility
 
