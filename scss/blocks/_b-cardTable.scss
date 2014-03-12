@@ -1,0 +1,14 @@
+/*------------------------------------*\
+    #CARD
+\*------------------------------------*/
+
+/* f-cardTable */
+%f-cardTable {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.b-cardTable {
+	@extend %f-cardTable;
+}

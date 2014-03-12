@@ -10,9 +10,8 @@
  * MIXINS...........Mixin helpers
  * RESET............normalize.css, reset, shared styles, etc.
  * BASE.............Basic HTML elements.
- * FRAMES...........Objects, abstractions, design patterns.
- * SKINS............Skinned frames.
- * BLOCKS...........Combining frames and skins.
+ * PATTERNS.........Objects, abstractions, design patterns.
+ * BLOCKS...........Combining frames and skins, using patterns.
  */
 
 
@@ -64,28 +63,19 @@
 
 
 /*------------------------------------*\
-    #FRAMES
+    #PATTERNS
 \*------------------------------------*/
 /**
  * These are design-free objects, abstractions and design patterns. These create
  * constructs that you lay your designs over.
  */
-@import "frames/all";
-
-
-/*------------------------------------*\
-    #SKINS
-\*------------------------------------*/
-/**
- * These are your skins for frames.
- */
-@import "skins/all";
+@import "patterns/all";
 
 
 /*------------------------------------*\
     #BLOCKS
 \*------------------------------------*/
 /**
- * These are your concrete objects.
+ * These are your concrete, designed objects.
  */
 @import "blocks/all";
