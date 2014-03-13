@@ -7,12 +7,12 @@
 
 /* f-card */
 %f-card {
-	width: cardem(200);
-	height: cardem(280);
+	width: 16em;
+	height: 22.4em;
 	position: relative;
 	float: left;
 	z-index: 2;
-	margin: 0 cardem(15) cardem(15) 0;
+	margin: 0 1.2em 1.2em 0;
 	pointer-events: none;
 
 	&.flipped {
@@ -20,8 +20,8 @@
 	}
 }
 
-$strut-outer-gap: cardem(6);
-$suit-size: cardem(80);
+$strut-outer-gap: 0.48em;
+$suit-size: 6.4em;
 $middle-adjustment: -0.323em;
 $centre-adjustment: -0.6em;
 $left-adjustment: -0.8em;
@@ -46,7 +46,6 @@ $strut-inner-gap: -0.2em;
 		@extend %s-card-suit;
 		@include flipped;
 	}
-
 	
 	&%f-card-strut--enabled {
 		display: block;
@@ -111,8 +110,8 @@ $strut-inner-gap: -0.2em;
 }
 
 /* f-card-corner */
-$f-card-corner-horizontalOuter: cardem(8);
-$f-card-corner-verticalOuter: cardem(12);
+$f-card-corner-horizontalOuter: 0.64em;
+$f-card-corner-verticalOuter: 0.96em;
 %f-card-corner {
 	line-height: 1;
 	overflow: hidden;
@@ -136,8 +135,8 @@ $f-card-corner-verticalOuter: cardem(12);
 /* f-card-corner-number */
 %f-card-cornerNumber {
 	font-size: 2em;
-	height: cardem(12);
-	line-height: cardem(12);
+	height: 0.96em;
+	line-height: 0.96em;
 
 	.ten & {
 		letter-spacing: -1.8px;
@@ -168,9 +167,9 @@ $f-card-corner-verticalOuter: cardem(12);
 /* s-card */
 %s-card {
 	background-color: #fff;
-	@include border-radius(cardem(10));
-	@include box-shadow(0 0 cardem(5) rgba(0, 0, 0, 0.5));
-	font-family: 'Suit-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	@include border-radius(0.8em);
+	@include box-shadow(0 0 0.4em rgba(0, 0, 0, 0.5));
+	@include suit-font;
 
 	&.club {
 		color: black;
