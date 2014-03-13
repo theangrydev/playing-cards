@@ -20,15 +20,18 @@
 	}
 }
 
-$strut-outer-gap: 0.48em;
-$suit-size: 6.4em;
+// TODO: use top/bottom/left/right not margin so symmetry is guaranteed
+$strut-outer-gap: 0.65em;
+$suit-size: 6em;
 $middle-adjustment: -0.323em;
 $centre-adjustment: -0.6em;
-$left-adjustment: -0.8em;
-$right-adjustment: 0.2em;
+$left-adjustment: -0.9em;
+$right-adjustment: 0.3em;
 $fit-six-adjustment-top: -1em;
 $fit-six-adjustment-bottom: 0em;
-$strut-inner-gap: -0.2em;
+$fit-eight-adjustment-top: -1.2em;
+$fit-eight-adjustment-bottom: 0.2em;
+$strut-inner-gap: -0.075em;
 
 /* f-card-strut */
 %f-card-strut {
@@ -105,6 +108,15 @@ $strut-inner-gap: -0.2em;
 		}
 		&:after {
 			margin-top: $fit-six-adjustment-bottom;
+		}
+	}
+
+	&%f-card-strut--fitEight {
+		&:before {
+			margin-top: $fit-eight-adjustment-top;
+		}
+		&:after {
+			margin-top: $fit-eight-adjustment-bottom;
 		}
 	}
 }
@@ -352,6 +364,11 @@ $f-card-corner-verticalOuter: 0.96em;
 	.eight & {
 		@extend %f-card-strut--enabled;
 		@extend %f-card-strut--fitSix;
+	}
+
+	.ten & {
+		@extend %f-card-strut--enabled;
+		@extend %f-card-strut--fitEight;
 	}
 
 	.seven & {
