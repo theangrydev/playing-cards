@@ -15,7 +15,6 @@
 	margin: 0 cardem(15) cardem(15) 0;
 	pointer-events: none;
 
-	/* flipped */
 	&.flipped {
 		@include flipped;
 	}
@@ -31,12 +30,9 @@ $fit-six-adjustment-top: -1em;
 $fit-six-adjustment-bottom: 0em;
 $strut-inner-gap: -0.2em;
 
+/* f-card-strut */
 %f-card-strut {
 	display: none;
-
-	&%f-card-strut--enabled {
-		display: block;
-	}
 
 	&:before {
 		font-size: $suit-size;
@@ -51,19 +47,30 @@ $strut-inner-gap: -0.2em;
 		@include flipped;
 	}
 
-	&%f-card-strut--left:before,
-	&%f-card-strut--left:after {
-		margin-left: $left-adjustment;
+	
+	&%f-card-strut--enabled {
+		display: block;
 	}
 
-	&%f-card-strut--right:before,
-	&%f-card-strut--right:after {
-		margin-left: $right-adjustment;
+	&%f-card-strut--left {
+		&:before,
+		&:after {
+			margin-left: $left-adjustment;
+		}
 	}
 
-	&%f-card-strut--middle:before,
-	&%f-card-strut--middle:after {
-		margin-left: $middle-adjustment;
+	&%f-card-strut--right {
+		&:before,
+		&:after {
+			margin-left: $right-adjustment;
+		}
+	}
+
+	&%f-card-strut--middle {
+		&:before,
+		&:after {
+			margin-left: $middle-adjustment;
+		}
 	}
 
 	&%f-card-strut--inner {
@@ -113,13 +120,11 @@ $f-card-corner-verticalOuter: cardem(12);
 	text-align: center;
 	pointer-events: none;
 
-	/* f-card-corner.top */
 	&.top {
 		left: $f-card-corner-horizontalOuter;
 		top: $f-card-corner-verticalOuter;
 	}
 
-	/* f-card-corner.bottom */
 	&.bottom {
 		@include flipped;
 		bottom: $f-card-corner-verticalOuter;
@@ -148,7 +153,7 @@ $f-card-corner-verticalOuter: cardem(12);
 	font-size: 1.5em;
 }
 
-
+/* f-card-strut */
 %f-card-strut {
 	margin: auto;
 	position: absolute;
@@ -160,6 +165,7 @@ $f-card-corner-verticalOuter: cardem(12);
 	width: 0;
 }
 
+/* s-card */
 %s-card {
 	background-color: #fff;
 	@include border-radius(cardem(10));
@@ -201,6 +207,7 @@ $f-card-corner-verticalOuter: cardem(12);
 	}
 }
 
+/* s-card-suit */
 %s-card-suit {
 	font-weight: bold;
 
@@ -221,6 +228,7 @@ $f-card-corner-verticalOuter: cardem(12);
 	}
 }
 
+/* s-card-number */
 %s-card-number {
 	.two & {
 		@include two;	
