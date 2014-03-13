@@ -1,0 +1,4 @@
+
+@function cardem($value) {
+	@return ($value / 200) * 16em;
+}

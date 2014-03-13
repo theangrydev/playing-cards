@@ -1,0 +1,4 @@
+
+@function suitem($value) {
+	@return cardem($value) / $suit-size;
+}

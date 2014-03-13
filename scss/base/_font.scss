@@ -1,0 +1,3 @@
+@import "compass/css3";
+
+@include font-face("Suit-Regular", font-files($font-dir + "suit-regular.woff", $font-dir + "suit-regular.ttf", $font-dir + "suit-regular.svg#suit-regular"), $font-dir + "suit-regular.eot")
