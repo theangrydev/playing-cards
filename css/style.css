@@ -1,0 +1,532 @@
+/*------------------------------------*\
+    STYLE.SCSS
+\*------------------------------------*/
+/**
+ * Here we start to pull everything together into one big stylesheet.
+ *
+ * SETTINGS.........Settings
+ * FUNCTIONS........Function helpers
+ * MIXINS...........Mixin helpers
+ * RESET............normalize.css, reset, shared styles, etc.
+ * BASE.............Basic HTML elements.
+ * PATTERNS.........Objects, abstractions, design patterns.
+ * BLOCKS...........Combining frames and skins, using patterns.
+ */
+/*------------------------------------*\
+    #SETTINGS
+\*------------------------------------*/
+/**
+ * Settings and variables.
+ */
+/*------------------------------------*\
+    #SETTINGS
+\*------------------------------------*/
+/**
+ * Pull in all the settings we require for this project.
+ */
+/*------------------------------------*\
+   #FUNCTIONS
+\*------------------------------------*/
+/**
+ * Re-usable functions.
+ */
+/*------------------------------------*\
+    #FUNCTIONS
+\*------------------------------------*/
+/**
+ * Pull in all our functions.
+ */
+/*------------------------------------*\
+   #MIXINS
+\*------------------------------------*/
+/**
+ * Re-usable mixins.
+ */
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+/**
+ * Pull in all our mixins.
+ */
+/*------------------------------------*\
+    #FLIPPED
+\*------------------------------------*/
+/*------------------------------------*\
+    #CLUB
+\*------------------------------------*/
+/*------------------------------------*\
+    #SPADE
+\*------------------------------------*/
+/*------------------------------------*\
+    #DIAMOND
+\*------------------------------------*/
+/*------------------------------------*\
+    #HEART
+\*------------------------------------*/
+/*------------------------------------*\
+    #TWO
+\*------------------------------------*/
+/*------------------------------------*\
+    #THREE
+\*------------------------------------*/
+/*------------------------------------*\
+    #THREE
+\*------------------------------------*/
+/*------------------------------------*\
+    #FIVE
+\*------------------------------------*/
+/*------------------------------------*\
+    #SIX
+\*------------------------------------*/
+/*------------------------------------*\
+    #SEVEN
+\*------------------------------------*/
+/*------------------------------------*\
+    #EIGHT
+\*------------------------------------*/
+/*------------------------------------*\
+    #NINE
+\*------------------------------------*/
+/*------------------------------------*\
+    #TEN
+\*------------------------------------*/
+/*------------------------------------*\
+    #JACK
+\*------------------------------------*/
+/*------------------------------------*\
+    #QUEEN
+\*------------------------------------*/
+/*------------------------------------*\
+    #KING
+\*------------------------------------*/
+/*------------------------------------*\
+    #ACE
+\*------------------------------------*/
+/*------------------------------------*\
+    #RESET
+\*------------------------------------*/
+/**
+ * These are far reaching styles that affect and underpin every element on the
+ * page, e.g. `* {}`.
+ */
+/*------------------------------------*\
+    #RESETS
+\*------------------------------------*/
+/**
+ * Pull in all our resets.
+ */
+/*------------------------------------------------------------------------*\
+    Global Reset v0.3
+    (based on http://meyerweb.com/eric/tools/css/reset/ - v1.0 | 20080212)
+\*------------------------------------------------------------------------*/
+/* line 5, ../scss/resets/_global.scss */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* line 15, ../scss/resets/_global.scss */
+body {
+  line-height: 1;
+}
+
+/* line 19, ../scss/resets/_global.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 23, ../scss/resets/_global.scss */
+:focus {
+  outline: 0;
+}
+
+/* line 27, ../scss/resets/_global.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*------------------------------------*\
+    HTML5 Reset
+\*------------------------------------*/
+/* line 4, ../scss/resets/_html5.scss */
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+/**
+ * These are base HTML elements, things with no classes on them, e.g. `h1 {}`,
+ * `blockquote {}`.
+ */
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+/**
+ * Pull in all the base files we want.
+ */
+/*------------------------------------*\
+    Base page styles
+\*------------------------------------*/
+/* line 4, ../scss/base/_page.scss */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+/* line 9, ../scss/base/_page.scss */
+body {
+  background-color: #e7e7e7;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  padding: 20px;
+}
+
+/*------------------------------------*\
+    Base heading styles
+\*------------------------------------*/
+/* line 4, ../scss/base/_heading.scss */
+h1 {
+  color: red;
+  font-size: 96px;
+}
+
+@font-face {
+  font-family: "Suit-Regular";
+  src: url('../assets/fonts/suit-regular.eot');
+  src: url('../assets/fonts/suit-regular.eot?#iefix') format('eot'), url('../assets/fonts/suit-regular.woff') format('woff'), url('../assets/fonts/suit-regular.ttf') format('truetype'), url('../assets/fonts/suit-regular.svg#suit-regular') format('svg');
+}
+
+/*------------------------------------*\
+    #PATTERNS
+\*------------------------------------*/
+/**
+ * These are design-free objects, abstractions and design patterns. These create
+ * constructs that you lay your designs over.
+ */
+/*------------------------------------*\
+    #PATTERNS
+\*------------------------------------*/
+/**
+ * Pull in all our objects and abstractions.
+ */
+/*------------------------------------*\
+    #BLOCKS
+\*------------------------------------*/
+/**
+ * These are your concrete, designed objects.
+ */
+/*------------------------------------*\
+    #BLOCKS
+\*------------------------------------*/
+/**
+ * Pull in all our ready to use blocks.
+ */
+/*------------------------------------*\
+    #CARD
+\*------------------------------------*/
+/* f-card */
+/* line 9, ../scss/blocks/_b-card.scss */
+.b-card {
+  width: 16em;
+  height: 22.4em;
+  position: relative;
+  float: left;
+  z-index: 2;
+  margin: 0 1.2em 1.2em 0;
+  pointer-events: none;
+}
+/* line 18, ../scss/blocks/_b-card.scss */
+.flipped.b-card {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
+/* f-card-strut */
+/* line 39, ../scss/blocks/_b-card.scss */
+.b-card-leftOuterStrut, .b-card-leftInnerStrut, .b-card-middleOuterStrut, .b-card-middleInnerStrut, .b-card-rightInnerStrut, .b-card-rightOuterStrut {
+  display: none;
+}
+/* line 42, ../scss/blocks/_b-card.scss */
+.b-card-leftOuterStrut:before, .b-card-leftInnerStrut:before, .b-card-middleOuterStrut:before, .b-card-middleInnerStrut:before, .b-card-rightInnerStrut:before, .b-card-rightOuterStrut:before {
+  font-size: 6em;
+  position: absolute;
+  width: 0.65em;
+  text-align: center;
+}
+/* line 50, ../scss/blocks/_b-card.scss */
+.b-card-leftOuterStrut:after, .b-card-leftInnerStrut:after, .b-card-middleOuterStrut:after, .b-card-middleInnerStrut:after, .b-card-rightInnerStrut:after, .b-card-rightOuterStrut:after {
+  font-size: 6em;
+  position: absolute;
+  width: 0.65em;
+  text-align: center;
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+/* line 59, ../scss/blocks/_b-card.scss */
+.four .b-card-leftOuterStrut, .five .b-card-leftOuterStrut, .six .b-card-leftOuterStrut, .seven .b-card-leftOuterStrut, .eight .b-card-leftOuterStrut, .nine .b-card-leftOuterStrut, .ten .b-card-leftOuterStrut, .two .b-card-leftOuterStrut.b-card-middleOuterStrut, .three .b-card-leftOuterStrut.b-card-middleOuterStrut, .three .b-card-leftOuterStrut.b-card-middleInnerStrut, .jack .b-card-leftOuterStrut.b-card-middleInnerStrut, .queen .b-card-leftOuterStrut.b-card-middleInnerStrut, .king .b-card-leftOuterStrut.b-card-middleInnerStrut, .ace .b-card-leftOuterStrut.b-card-middleInnerStrut, .four .b-card-leftInnerStrut.b-card-leftOuterStrut, .five .b-card-leftInnerStrut.b-card-leftOuterStrut, .six .b-card-leftInnerStrut, .seven .b-card-leftInnerStrut, .eight .b-card-leftInnerStrut, .nine .b-card-leftInnerStrut, .ten .b-card-leftInnerStrut, .two .b-card-leftInnerStrut.b-card-middleOuterStrut, .three .b-card-leftInnerStrut.b-card-middleOuterStrut, .three .b-card-leftInnerStrut.b-card-middleInnerStrut, .five .b-card-leftInnerStrut.b-card-middleInnerStrut, .jack .b-card-leftInnerStrut.b-card-middleInnerStrut, .queen .b-card-leftInnerStrut.b-card-middleInnerStrut, .king .b-card-leftInnerStrut.b-card-middleInnerStrut, .ace .b-card-leftInnerStrut.b-card-middleInnerStrut, .four .b-card-leftInnerStrut.b-card-rightOuterStrut, .five .b-card-leftInnerStrut.b-card-rightOuterStrut, .four .b-card-middleOuterStrut.b-card-leftOuterStrut, .five .b-card-middleOuterStrut.b-card-leftOuterStrut, .six .b-card-middleOuterStrut.b-card-leftOuterStrut, .nine .b-card-middleOuterStrut.b-card-leftOuterStrut, .six .b-card-middleOuterStrut.b-card-leftInnerStrut, .nine .b-card-middleOuterStrut.b-card-leftInnerStrut, .two .b-card-middleOuterStrut, .three .b-card-middleOuterStrut, .seven .b-card-middleOuterStrut, .eight .b-card-middleOuterStrut, .ten .b-card-middleOuterStrut, .five .b-card-middleOuterStrut.b-card-middleInnerStrut, .nine .b-card-middleOuterStrut.b-card-middleInnerStrut, .jack .b-card-middleOuterStrut.b-card-middleInnerStrut, .queen .b-card-middleOuterStrut.b-card-middleInnerStrut, .king .b-card-middleOuterStrut.b-card-middleInnerStrut, .ace .b-card-middleOuterStrut.b-card-middleInnerStrut, .six .b-card-middleOuterStrut.b-card-rightInnerStrut, .nine .b-card-middleOuterStrut.b-card-rightInnerStrut, .four .b-card-middleOuterStrut.b-card-rightOuterStrut, .five .b-card-middleOuterStrut.b-card-rightOuterStrut, .six .b-card-middleOuterStrut.b-card-rightOuterStrut, .nine .b-card-middleOuterStrut.b-card-rightOuterStrut, .four .b-card-middleInnerStrut.b-card-leftOuterStrut, .six .b-card-middleInnerStrut.b-card-leftOuterStrut, .seven .b-card-middleInnerStrut.b-card-leftOuterStrut, .eight .b-card-middleInnerStrut.b-card-leftOuterStrut, .ten .b-card-middleInnerStrut.b-card-leftOuterStrut, .six .b-card-middleInnerStrut.b-card-leftInnerStrut, .seven .b-card-middleInnerStrut.b-card-leftInnerStrut, .eight .b-card-middleInnerStrut.b-card-leftInnerStrut, .ten .b-card-middleInnerStrut.b-card-leftInnerStrut, .two .b-card-middleInnerStrut.b-card-middleOuterStrut, .seven .b-card-middleInnerStrut.b-card-middleOuterStrut, .eight .b-card-middleInnerStrut.b-card-middleOuterStrut, .ten .b-card-middleInnerStrut.b-card-middleOuterStrut, .three .b-card-middleInnerStrut, .five .b-card-middleInnerStrut, .nine .b-card-middleInnerStrut, .jack .b-card-middleInnerStrut, .queen .b-card-middleInnerStrut, .king .b-card-middleInnerStrut, .ace .b-card-middleInnerStrut, .six .b-card-middleInnerStrut.b-card-rightInnerStrut, .seven .b-card-middleInnerStrut.b-card-rightInnerStrut, .eight .b-card-middleInnerStrut.b-card-rightInnerStrut, .ten .b-card-middleInnerStrut.b-card-rightInnerStrut, .four .b-card-middleInnerStrut.b-card-rightOuterStrut, .six .b-card-middleInnerStrut.b-card-rightOuterStrut, .seven .b-card-middleInnerStrut.b-card-rightOuterStrut, .eight .b-card-middleInnerStrut.b-card-rightOuterStrut, .ten .b-card-middleInnerStrut.b-card-rightOuterStrut, .four .b-card-rightInnerStrut.b-card-leftOuterStrut, .five .b-card-rightInnerStrut.b-card-leftOuterStrut, .two .b-card-rightInnerStrut.b-card-middleOuterStrut, .three .b-card-rightInnerStrut.b-card-middleOuterStrut, .three .b-card-rightInnerStrut.b-card-middleInnerStrut, .five .b-card-rightInnerStrut.b-card-middleInnerStrut, .jack .b-card-rightInnerStrut.b-card-middleInnerStrut, .queen .b-card-rightInnerStrut.b-card-middleInnerStrut, .king .b-card-rightInnerStrut.b-card-middleInnerStrut, .ace .b-card-rightInnerStrut.b-card-middleInnerStrut, .six .b-card-rightInnerStrut, .seven .b-card-rightInnerStrut, .eight .b-card-rightInnerStrut, .nine .b-card-rightInnerStrut, .ten .b-card-rightInnerStrut, .four .b-card-rightInnerStrut.b-card-rightOuterStrut, .five .b-card-rightInnerStrut.b-card-rightOuterStrut, .two .b-card-rightOuterStrut.b-card-middleOuterStrut, .three .b-card-rightOuterStrut.b-card-middleOuterStrut, .three .b-card-rightOuterStrut.b-card-middleInnerStrut, .jack .b-card-rightOuterStrut.b-card-middleInnerStrut, .queen .b-card-rightOuterStrut.b-card-middleInnerStrut, .king .b-card-rightOuterStrut.b-card-middleInnerStrut, .ace .b-card-rightOuterStrut.b-card-middleInnerStrut, .four .b-card-rightOuterStrut, .five .b-card-rightOuterStrut, .six .b-card-rightOuterStrut, .seven .b-card-rightOuterStrut, .eight .b-card-rightOuterStrut, .nine .b-card-rightOuterStrut, .ten .b-card-rightOuterStrut {
+  display: block;
+}
+/* line 65, ../scss/blocks/_b-card.scss */
+.b-card-leftOuterStrut:before, .b-card-leftInnerStrut:before, .b-card-leftOuterStrut:after, .b-card-leftInnerStrut:after {
+  right: 0.3em;
+}
+/* line 72, ../scss/blocks/_b-card.scss */
+.b-card-rightInnerStrut:before, .b-card-rightOuterStrut:before, .b-card-rightInnerStrut:after, .b-card-rightOuterStrut:after {
+  left: 0.3em;
+}
+/* line 79, ../scss/blocks/_b-card.scss */
+.b-card-middleOuterStrut:before, .b-card-middleInnerStrut:before, .b-card-middleOuterStrut:after, .b-card-middleInnerStrut:after {
+  right: -0.3245em;
+}
+/* line 85, ../scss/blocks/_b-card.scss */
+.nine .b-card-leftInnerStrut:before, .ten .b-card-leftInnerStrut:before, .nine .b-card-rightInnerStrut:before, .ten .b-card-rightInnerStrut:before {
+  bottom: -0.05em;
+}
+/* line 88, ../scss/blocks/_b-card.scss */
+.nine .b-card-leftInnerStrut:after, .ten .b-card-leftInnerStrut:after, .nine .b-card-rightInnerStrut:after, .ten .b-card-rightInnerStrut:after {
+  top: -0.05em;
+}
+/* line 94, ../scss/blocks/_b-card.scss */
+.four .b-card-leftOuterStrut:before, .five .b-card-leftOuterStrut:before, .six .b-card-leftOuterStrut:before, .seven .b-card-leftOuterStrut:before, .eight .b-card-leftOuterStrut:before, .nine .b-card-leftOuterStrut:before, .ten .b-card-leftOuterStrut:before, .two .b-card-middleOuterStrut:before, .three .b-card-middleOuterStrut:before, .four .b-card-rightOuterStrut:before, .five .b-card-rightOuterStrut:before, .six .b-card-rightOuterStrut:before, .seven .b-card-rightOuterStrut:before, .eight .b-card-rightOuterStrut:before, .nine .b-card-rightOuterStrut:before, .ten .b-card-rightOuterStrut:before {
+  bottom: 0.65em;
+}
+/* line 97, ../scss/blocks/_b-card.scss */
+.four .b-card-leftOuterStrut:after, .five .b-card-leftOuterStrut:after, .six .b-card-leftOuterStrut:after, .seven .b-card-leftOuterStrut:after, .eight .b-card-leftOuterStrut:after, .nine .b-card-leftOuterStrut:after, .ten .b-card-leftOuterStrut:after, .two .b-card-middleOuterStrut:after, .three .b-card-middleOuterStrut:after, .four .b-card-rightOuterStrut:after, .five .b-card-rightOuterStrut:after, .six .b-card-rightOuterStrut:after, .seven .b-card-rightOuterStrut:after, .eight .b-card-rightOuterStrut:after, .nine .b-card-rightOuterStrut:after, .ten .b-card-rightOuterStrut:after {
+  top: 0.65em;
+}
+/* line 103, ../scss/blocks/_b-card.scss */
+.six .b-card-leftInnerStrut:before, .seven .b-card-leftInnerStrut:before, .eight .b-card-leftInnerStrut:before, .three .b-card-middleInnerStrut:before, .five .b-card-middleInnerStrut:before, .nine .b-card-middleInnerStrut:before, .jack .b-card-middleInnerStrut:before, .queen .b-card-middleInnerStrut:before, .king .b-card-middleInnerStrut:before, .ace .b-card-middleInnerStrut:before, .six .b-card-rightInnerStrut:before, .seven .b-card-rightInnerStrut:before, .eight .b-card-rightInnerStrut:before {
+  top: -0.6em;
+}
+/* line 106, ../scss/blocks/_b-card.scss */
+.six .b-card-leftInnerStrut:after, .seven .b-card-leftInnerStrut:after, .eight .b-card-leftInnerStrut:after, .three .b-card-middleInnerStrut:after, .five .b-card-middleInnerStrut:after, .nine .b-card-middleInnerStrut:after, .jack .b-card-middleInnerStrut:after, .queen .b-card-middleInnerStrut:after, .king .b-card-middleInnerStrut:after, .ace .b-card-middleInnerStrut:after, .six .b-card-rightInnerStrut:after, .seven .b-card-rightInnerStrut:after, .eight .b-card-rightInnerStrut:after {
+  display: none;
+}
+/* line 112, ../scss/blocks/_b-card.scss */
+.seven .b-card-middleOuterStrut:before, .eight .b-card-middleOuterStrut:before {
+  bottom: 0.07em;
+}
+/* line 115, ../scss/blocks/_b-card.scss */
+.seven .b-card-middleOuterStrut:after, .eight .b-card-middleOuterStrut:after {
+  top: 0.07em;
+}
+/* line 121, ../scss/blocks/_b-card.scss */
+.ten .b-card-middleOuterStrut:before {
+  bottom: 0.2em;
+}
+/* line 124, ../scss/blocks/_b-card.scss */
+.ten .b-card-middleOuterStrut:after {
+  top: 0.2em;
+}
+
+/* f-card-corner */
+/* line 133, ../scss/blocks/_b-card.scss */
+.b-card-corner {
+  line-height: 1;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+}
+/* line 140, ../scss/blocks/_b-card.scss */
+.top.b-card-corner {
+  left: 0.64em;
+  top: 0.96em;
+}
+/* line 145, ../scss/blocks/_b-card.scss */
+.bottom.b-card-corner {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  bottom: 0.96em;
+  right: 0.64em;
+}
+
+/* f-card-corner-number */
+/* line 154, ../scss/blocks/_b-card.scss */
+.b-card-corner:before {
+  font-size: 2em;
+  height: 0.96em;
+  line-height: 0.96em;
+}
+/* line 159, ../scss/blocks/_b-card.scss */
+.ten .b-card-corner:before {
+  letter-spacing: -0.03em;
+  margin-left: -0.15em;
+  padding-right: 0.9px;
+  padding-left: 0.9px;
+}
+
+/* f-card-corner-suit */
+/* line 168, ../scss/blocks/_b-card.scss */
+.b-card-corner:after {
+  display: block;
+  font-size: 1.5em;
+}
+
+/* f-card-strut */
+/* line 174, ../scss/blocks/_b-card.scss */
+.b-card-leftOuterStrut, .b-card-leftInnerStrut, .b-card-middleOuterStrut, .b-card-middleInnerStrut, .b-card-rightInnerStrut, .b-card-rightOuterStrut {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 0;
+  width: 0;
+}
+
+/* s-card */
+/* line 186, ../scss/blocks/_b-card.scss */
+.b-card {
+  background-color: #fff;
+  -webkit-border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -ms-border-radius: 0.8em;
+  -o-border-radius: 0.8em;
+  border-radius: 0.8em;
+  -webkit-box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
+  font-family: 'Suit-Regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+/* line 192, ../scss/blocks/_b-card.scss */
+.club.b-card {
+  color: black;
+}
+/* line 196, ../scss/blocks/_b-card.scss */
+.spade.b-card {
+  color: black;
+}
+/* line 200, ../scss/blocks/_b-card.scss */
+.diamond.b-card {
+  color: red;
+}
+/* line 204, ../scss/blocks/_b-card.scss */
+.heart.b-card {
+  color: red;
+}
+/* line 209, ../scss/blocks/_b-card.scss */
+.fourColour.club.b-card {
+  color: green;
+}
+/* line 213, ../scss/blocks/_b-card.scss */
+.fourColour.spade.b-card {
+  color: black;
+}
+/* line 217, ../scss/blocks/_b-card.scss */
+.fourColour.diamond.b-card {
+  color: blue;
+}
+/* line 221, ../scss/blocks/_b-card.scss */
+.fourColour.heart.b-card {
+  color: red;
+}
+
+/* s-card-suit */
+/* line 229, ../scss/blocks/_b-card.scss */
+.club .b-card-leftOuterStrut:before, .club .b-card-leftInnerStrut:before, .club .b-card-middleOuterStrut:before, .club .b-card-middleInnerStrut:before, .club .b-card-rightInnerStrut:before, .club .b-card-rightOuterStrut:before, .club .b-card-leftOuterStrut:after, .club .b-card-leftInnerStrut:after, .club .b-card-middleOuterStrut:after, .club .b-card-middleInnerStrut:after, .club .b-card-rightInnerStrut:after, .club .b-card-rightOuterStrut:after, .club .b-card-corner:after {
+  content: '\2663';
+}
+/* line 233, ../scss/blocks/_b-card.scss */
+.spade .b-card-leftOuterStrut:before, .spade .b-card-leftInnerStrut:before, .spade .b-card-middleOuterStrut:before, .spade .b-card-middleInnerStrut:before, .spade .b-card-rightInnerStrut:before, .spade .b-card-rightOuterStrut:before, .spade .b-card-leftOuterStrut:after, .spade .b-card-leftInnerStrut:after, .spade .b-card-middleOuterStrut:after, .spade .b-card-middleInnerStrut:after, .spade .b-card-rightInnerStrut:after, .spade .b-card-rightOuterStrut:after, .spade .b-card-corner:after {
+  content: '\2660';
+}
+/* line 237, ../scss/blocks/_b-card.scss */
+.diamond .b-card-leftOuterStrut:before, .diamond .b-card-leftInnerStrut:before, .diamond .b-card-middleOuterStrut:before, .diamond .b-card-middleInnerStrut:before, .diamond .b-card-rightInnerStrut:before, .diamond .b-card-rightOuterStrut:before, .diamond .b-card-leftOuterStrut:after, .diamond .b-card-leftInnerStrut:after, .diamond .b-card-middleOuterStrut:after, .diamond .b-card-middleInnerStrut:after, .diamond .b-card-rightInnerStrut:after, .diamond .b-card-rightOuterStrut:after, .diamond .b-card-corner:after {
+  content: '\2666';
+}
+/* line 241, ../scss/blocks/_b-card.scss */
+.heart .b-card-leftOuterStrut:before, .heart .b-card-leftInnerStrut:before, .heart .b-card-middleOuterStrut:before, .heart .b-card-middleInnerStrut:before, .heart .b-card-rightInnerStrut:before, .heart .b-card-rightOuterStrut:before, .heart .b-card-leftOuterStrut:after, .heart .b-card-leftInnerStrut:after, .heart .b-card-middleOuterStrut:after, .heart .b-card-middleInnerStrut:after, .heart .b-card-rightInnerStrut:after, .heart .b-card-rightOuterStrut:after, .heart .b-card-corner:after {
+  content: '\2666';
+}
+
+/* s-card-number */
+/* line 5, ../scss/mixins/_rank.scss */
+.two .b-card-corner:before {
+  content: '2';
+}
+/* line 14, ../scss/mixins/_rank.scss */
+.three .b-card-corner:before {
+  content: '3';
+}
+/* line 23, ../scss/mixins/_rank.scss */
+.four .b-card-corner:before {
+  content: '4';
+}
+/* line 32, ../scss/mixins/_rank.scss */
+.five .b-card-corner:before {
+  content: '5';
+}
+/* line 41, ../scss/mixins/_rank.scss */
+.six .b-card-corner:before {
+  content: '6';
+}
+/* line 50, ../scss/mixins/_rank.scss */
+.seven .b-card-corner:before {
+  content: '7';
+}
+/* line 59, ../scss/mixins/_rank.scss */
+.eight .b-card-corner:before {
+  content: '8';
+}
+/* line 68, ../scss/mixins/_rank.scss */
+.nine .b-card-corner:before {
+  content: '9';
+}
+/* line 77, ../scss/mixins/_rank.scss */
+.ten .b-card-corner:before {
+  content: '10';
+}
+/* line 86, ../scss/mixins/_rank.scss */
+.jack .b-card-corner:before {
+  content: 'J';
+}
+/* line 95, ../scss/mixins/_rank.scss */
+.queen .b-card-corner:before {
+  content: 'Q';
+}
+/* line 104, ../scss/mixins/_rank.scss */
+.king .b-card-corner:before {
+  content: 'K';
+}
+/* line 114, ../scss/mixins/_rank.scss */
+.ace .b-card-corner:before {
+  content: 'A';
+}
+
+/* line 379, ../scss/blocks/_b-card.scss */
+.seven .b-card-middleOuterStrut:after {
+  display: none;
+}
+
+/*------------------------------------*\
+    #CARD
+\*------------------------------------*/
+/* f-cardTable */
+/* line 6, ../scss/blocks/_b-cardTable.scss */
+.b-cardTable {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
