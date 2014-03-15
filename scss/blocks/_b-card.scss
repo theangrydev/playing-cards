@@ -20,18 +20,20 @@
 	}
 }
 
-// TODO: use top/bottom/left/right not margin so symmetry is guaranteed
-$strut-outer-gap: 0.65em;
+
+// size of suit symbols
 $suit-size: 6em;
-$middle-adjustment: -0.323em;
+
+// vertical adjustments
+$strut-inner-gap: -0.05em;
+$strut-outer-gap: 0.65em;
+$middle-adjustment: -0.3245em;
+$fit-six-adjustment: 0.07em;
+$fit-eight-adjustment: 0.2em;
+
+// horizontal adjustments
 $centre-adjustment: -0.6em;
-$left-adjustment: -0.9em;
-$right-adjustment: 0.3em;
-$fit-six-adjustment-top: -1em;
-$fit-six-adjustment-bottom: 0em;
-$fit-eight-adjustment-top: -1.2em;
-$fit-eight-adjustment-bottom: 0.2em;
-$strut-inner-gap: -0.075em;
+$horizontal-adjustment: 0.3em;
 
 /* f-card-strut */
 %f-card-strut {
@@ -40,12 +42,16 @@ $strut-inner-gap: -0.075em;
 	&:before {
 		font-size: $suit-size;
 		position: absolute;
+		width: 0.65em * 6em / $suit-size;
+		text-align: center;
 		@extend %s-card-suit;
 	}
 
 	&:after {
 		font-size: $suit-size;
 		position: absolute;
+		width: 0.65em * 6em / $suit-size;
+		text-align: center;
 		@extend %s-card-suit;
 		@include flipped;
 	}
@@ -56,22 +62,22 @@ $strut-inner-gap: -0.075em;
 
 	&%f-card-strut--left {
 		&:before,
-		&:after {
-			margin-left: $left-adjustment;
+        &:after {
+          right: $horizontal-adjustment;
 		}
 	}
 
 	&%f-card-strut--right {
 		&:before,
 		&:after {
-			margin-left: $right-adjustment;
+          left: $horizontal-adjustment;
 		}
 	}
 
 	&%f-card-strut--middle {
 		&:before,
 		&:after {
-			margin-left: $middle-adjustment;
+			right: $middle-adjustment;
 		}
 	}
 
@@ -95,7 +101,7 @@ $strut-inner-gap: -0.075em;
 
 	&%f-card-strut--centre {
 		&:before {
-			margin-top: $centre-adjustment;
+			top: $centre-adjustment;
 		}
 		&:after {
 			display: none;
@@ -104,19 +110,19 @@ $strut-inner-gap: -0.075em;
 
 	&%f-card-strut--fitSix {
 		&:before {
-			margin-top: $fit-six-adjustment-top;
+		  bottom: $fit-six-adjustment;
 		}
 		&:after {
-			margin-top: $fit-six-adjustment-bottom;
+          top: $fit-six-adjustment;
 		}
 	}
 
 	&%f-card-strut--fitEight {
 		&:before {
-			margin-top: $fit-eight-adjustment-top;
+			bottom: $fit-eight-adjustment;
 		}
 		&:after {
-			margin-top: $fit-eight-adjustment-bottom;
+			top: $fit-eight-adjustment;
 		}
 	}
 }
@@ -151,8 +157,8 @@ $f-card-corner-verticalOuter: 0.96em;
 	line-height: 0.96em;
 
 	.ten & {
-		letter-spacing: -1.8px;
-		margin-left: -4px;
+		letter-spacing: -0.03em;
+		margin-left: -0.15em;
 		padding-right: 0.9px;
 		padding-left: 0.9px;
 	}
@@ -220,8 +226,6 @@ $f-card-corner-verticalOuter: 0.96em;
 
 /* s-card-suit */
 %s-card-suit {
-	font-weight: bold;
-
 	.club & {
 		@include club;
 	}
