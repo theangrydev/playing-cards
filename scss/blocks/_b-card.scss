@@ -68,6 +68,14 @@ $face-suit-horizontal-adjustment: 0.26583333em * $suit-size-ratio;
 /* f-card-strut */
 %f-card-strut {
 	display: none;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	height: 0;
+	width: 0;
 
 	&:before,
 	&:after {
@@ -212,18 +220,6 @@ $f-card-corner-verticalOuter: 0.96em;
 %f-card-cornerSuit {
 	display: block;
 	font-size: 1.5em;
-}
-
-/* f-card-strut */
-%f-card-strut {
-	margin: auto;
-	position: absolute;
-	top: 0; 
-	left: 0; 
-	bottom: 0; 
-	right: 0;
-	height: 0;
-	width: 0;
 }
 
 /* s-card */
