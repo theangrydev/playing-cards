@@ -1,6 +1,28 @@
 /*------------------------------------*\
     #CARD
 \*------------------------------------*/
+/*
+	Markup:
+    <div class="b-card ${rank} ${suit} [${theme} ${flipped}]>
+    	<div class="b-card-front">
+    		<div class="b-card-topCorner></div>
+    		<div class="b-card-leftOuterStrut"></div>
+			<div class="b-card-leftInnerStrut"></div>
+			<div class="b-card-middleOuterStrut"></div>
+			<div class="b-card-middleInnerStrut"></div>
+			<div class="b-card-rightInnerStrut"></div>
+			<div class="b-card-rightOuterStrut"></div>
+			<div class="b-card-bottomCorner></div>
+    	</div>
+	</div>
+
+    Where:
+    ${rank} = two|three|four|five|six|seven|eight|nine|ten|jack|queen|king|ace
+    ${suit} = club|spade|heart|diamond
+    ${theme} = fourColour
+    ${flipped} = flipped
+*/
+
 @import "compass/css3";
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
@@ -20,13 +42,12 @@
 	}
 }
 
-
 // size of suit symbols
 $suit-size: 5.5em;
 $suit-size-ratio: 6em / $suit-size;
 
 // vertical adjustments
-$centre-adjustment: -0.6em;// * 6em / $suit-size;
+$centre-adjustment: -0.57em;
 $strut-inner-gap: $centre-adjustment + 0.5em * $suit-size-ratio;
 $strut-outer-gap: $centre-adjustment + 1.25em * $suit-size-ratio;
 $fit-six-adjustment: $centre-adjustment + 0.67em * $suit-size-ratio;
@@ -37,12 +58,12 @@ $horizontal-adjustment: 0.25em * $suit-size-ratio;
 $middle-adjustment: -0.34em * $suit-size-ratio;
 
 // face adjustments
-$face-left-adjustment: -1em;
-$face-top-adjustment: -1.6em;
-$face-width: 2em;
-$face-height: 3.2em;
-$face-suit-vertical-adjustment: 0.73em;
-$face-suit-horizontal-adjustment: 0.29em;
+$face-left-adjustment: -0.916666em * $suit-size-ratio;
+$face-top-adjustment: -1.466666em * $suit-size-ratio;
+$face-width: 1.8333em * $suit-size-ratio;
+$face-height: 2.9333em * $suit-size-ratio;
+$face-suit-vertical-adjustment: 0.6691666em * $suit-size-ratio;
+$face-suit-horizontal-adjustment: 0.26583333em * $suit-size-ratio;
 
 /* f-card-strut */
 %f-card-strut {
@@ -161,18 +182,17 @@ $f-card-corner-verticalOuter: 0.96em;
 	text-align: center;
 	pointer-events: none;
 
-	&.top {
+	&%f-card-corner--top {
 		left: $f-card-corner-horizontalOuter;
 		top: $f-card-corner-verticalOuter;
 	}
 
-	&.bottom {
+	&%f-card-corner--bottom {
 		@include flipped;
 		bottom: $f-card-corner-verticalOuter;
 		right: $f-card-corner-horizontalOuter;
 	}
 }
-
 
 /* f-card-corner-number */
 %f-card-cornerNumber {
@@ -248,6 +268,7 @@ $f-card-corner-verticalOuter: 0.96em;
 	}
 }
 
+/* s-card-face */
 %s-card-face {
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -379,6 +400,7 @@ $f-card-corner-verticalOuter: 0.96em;
 	}
 }
 
+/* s-card-strut */
 %s-card-strut {
 	&:before {
 		@extend %s-card-suit;
@@ -411,7 +433,8 @@ $f-card-corner-verticalOuter: 0.96em;
 	@extend %s-card;
 }
 
-.b-card-corner {
+.b-card-topCorner,
+.b-card-bottomCorner {
 	@extend %f-card-corner;
 
 	&:before {
@@ -423,6 +446,14 @@ $f-card-corner-verticalOuter: 0.96em;
 		@extend %f-card-cornerSuit;
 		@extend %s-card-suit;
 	}
+}
+
+.b-card-topCorner {
+	@extend %f-card-corner--top;
+}
+
+.b-card-bottomCorner {
+	@extend %f-card-corner--bottom;
 }
 
 .b-card-leftOuterStrut {
