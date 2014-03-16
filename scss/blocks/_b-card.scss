@@ -36,6 +36,12 @@ $fit-eight-adjustment: $centre-adjustment + 0.8em * $suit-size-ratio;
 $horizontal-adjustment: 0.25em * $suit-size-ratio;
 $middle-adjustment: -0.34em * $suit-size-ratio;
 
+// face adjustments
+$face-left-adjustment: -1em;
+$face-top-adjustment: -1.55em;
+$face-width: 2em;
+$face-height: 3.2em;
+
 /* f-card-strut */
 %f-card-strut {
 	display: none;
@@ -115,6 +121,20 @@ $middle-adjustment: -0.34em * $suit-size-ratio;
 		}
 		&:after {
 			top: $fit-eight-adjustment;
+		}
+	}
+
+	&%f-card-strut--face {
+		&:before {
+			position: absolute;
+			width: $face-width;
+			height: $face-height;
+			left: $face-left-adjustment;
+			top: $face-top-adjustment;
+		}
+
+		&:after {
+			display: none;
 		}
 	}
 }
@@ -216,6 +236,63 @@ $f-card-corner-verticalOuter: 0.96em;
 	}
 }
 
+%s-card-face {
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	.jack.diamond & {
+		@include face('JD');
+	}
+
+	.jack.club & {
+		@include face('JC');
+	}
+
+	.jack.heart & {
+		@include face('JH');
+	}
+
+	.jack.spade & {
+		@include face('JS');
+	}
+
+	.jack.diamond & {
+		@include face('JD');
+	}
+
+	.queen.club & {
+		@include face('QC');
+	}
+
+	.queen.heart & {
+		@include face('QH');
+	}
+
+	.queen.spade & {
+		@include face('QS');
+	}
+
+	.queen.diamond & {
+		@include face('QD');
+	}
+
+	.king.club & {
+		@include face('KC');
+	}
+
+	.king.heart & {
+		@include face('KH');
+	}
+
+	.king.spade & {
+		@include face('KS');
+	}
+
+	.king.diamond & {
+		@include face('KD');
+	}
+}
+
 /* s-card-suit */
 %s-card-suit {
 	.club & {
@@ -301,6 +378,19 @@ $f-card-corner-verticalOuter: 0.96em;
 
 	&%s-card-strut--big {
 		font-size: 1.5em;
+	}
+
+	&%s-card-strut--face {
+		&:before {
+			content: '';
+			z-index: 6;
+			@extend %s-card-face;
+		}
+		&:after {
+			content: '';
+			background-color: green;
+			z-index: 4;
+		}
 	}
 }
 
@@ -393,26 +483,27 @@ $f-card-corner-verticalOuter: 0.96em;
 
 .b-card-middleInnerStrut {
 	@extend %f-card-strut;
-	@extend %f-card-strut;
-	@extend %f-card-strut--middle;
 	@extend %s-card-strut;
 
 	.three &,
 	.five &,
 	.nine &,
-	.jack &,
-	.queen &,
-	.king &,
 	.ace & {
 		@extend %f-card-strut--enabled;
 		@extend %f-card-strut--centre;
+		@extend %f-card-strut--middle;
+	}
+
+	.ace & {
+		@extend %s-card-strut--big;
 	}
 
 	.jack &,
 	.queen &,
-	.king &,
-	.ace & {
-		@extend %s-card-strut--big;
+	.king & {
+		@extend %f-card-strut--enabled;
+		@extend %f-card-strut--face;
+		@extend %s-card-strut--face;
 	}
 }
 
