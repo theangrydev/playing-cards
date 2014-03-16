@@ -36,6 +36,14 @@ $fit-eight-adjustment: $centre-adjustment + 0.8em * $suit-size-ratio;
 $horizontal-adjustment: 0.25em * $suit-size-ratio;
 $middle-adjustment: -0.34em * $suit-size-ratio;
 
+// face adjustments
+$face-left-adjustment: -1em;
+$face-top-adjustment: -1.6em;
+$face-width: 2em;
+$face-height: 3.2em;
+$face-suit-vertical-adjustment: 0.73em;
+$face-suit-horizontal-adjustment: 0.29em;
+
 /* f-card-strut */
 %f-card-strut {
 	display: none;
@@ -115,6 +123,30 @@ $middle-adjustment: -0.34em * $suit-size-ratio;
 		}
 		&:after {
 			top: $fit-eight-adjustment;
+		}
+	}
+
+	&%f-card-strut--face {
+		&:before {
+			width: $face-width;
+			height: $face-height;
+			left: $face-left-adjustment;
+			top: $face-top-adjustment;
+		}
+
+		&:after {
+			display: none;
+		}
+	}
+
+	&%f-card-strut--faceSuit {
+		&:before {
+			bottom: $face-suit-vertical-adjustment;
+			right: $face-suit-horizontal-adjustment;
+		}
+		&:after {
+			top: $face-suit-vertical-adjustment;
+			left: $face-suit-horizontal-adjustment;
 		}
 	}
 }
@@ -216,6 +248,63 @@ $f-card-corner-verticalOuter: 0.96em;
 	}
 }
 
+%s-card-face {
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	.jack.diamond & {
+		@include face('JD');
+	}
+
+	.jack.club & {
+		@include face('JC');
+	}
+
+	.jack.heart & {
+		@include face('JH');
+	}
+
+	.jack.spade & {
+		@include face('JS');
+	}
+
+	.jack.diamond & {
+		@include face('JD');
+	}
+
+	.queen.club & {
+		@include face('QC');
+	}
+
+	.queen.heart & {
+		@include face('QH');
+	}
+
+	.queen.spade & {
+		@include face('QS');
+	}
+
+	.queen.diamond & {
+		@include face('QD');
+	}
+
+	.king.club & {
+		@include face('KC');
+	}
+
+	.king.heart & {
+		@include face('KH');
+	}
+
+	.king.spade & {
+		@include face('KS');
+	}
+
+	.king.diamond & {
+		@include face('KD');
+	}
+}
+
 /* s-card-suit */
 %s-card-suit {
 	.club & {
@@ -231,7 +320,7 @@ $f-card-corner-verticalOuter: 0.96em;
 	}
 
 	.heart & {
-		@include diamond;
+		@include heart;
 	}
 }
 
@@ -302,6 +391,19 @@ $f-card-corner-verticalOuter: 0.96em;
 	&%s-card-strut--big {
 		font-size: 1.5em;
 	}
+
+	&%s-card-strut--face {
+		&:before {
+			content: '';
+			z-index: 6;
+			@extend %s-card-face;
+		}
+		&:after {
+			content: '';
+			background-color: green;
+			z-index: 4;
+		}
+	}
 }
 
 .b-card {
@@ -325,8 +427,8 @@ $f-card-corner-verticalOuter: 0.96em;
 
 .b-card-leftOuterStrut {
 	@extend %f-card-strut;
-	@extend %f-card-strut;
 	@extend %f-card-strut--left;
+	@extend %f-card-strut--outer;
 	@extend %s-card-strut;
 
 	.four &,
@@ -337,12 +439,10 @@ $f-card-corner-verticalOuter: 0.96em;
 	.nine &,
 	.ten & {
 		@extend %f-card-strut--enabled;
-		@extend %f-card-strut--outer;
 	}
 }
 
 .b-card-leftInnerStrut {
-	@extend %f-card-strut;
 	@extend %f-card-strut;
 	@extend %f-card-strut--left;
 	@extend %s-card-strut;
@@ -363,8 +463,6 @@ $f-card-corner-verticalOuter: 0.96em;
 
 .b-card-middleOuterStrut {
 	@extend %f-card-strut;
-	@extend %f-card-strut;
-	@extend %f-card-strut--middle;
 	@extend %s-card-strut;
 
 	.two &,
@@ -375,11 +473,13 @@ $f-card-corner-verticalOuter: 0.96em;
 
 	.seven &,
 	.eight & {
+		@extend %f-card-strut--middle;
 		@extend %f-card-strut--enabled;
 		@extend %f-card-strut--fitSix;
 	}
 
 	.ten & {
+		@extend %f-card-strut--middle;
 		@extend %f-card-strut--enabled;
 		@extend %f-card-strut--fitEight;
 	}
@@ -389,35 +489,42 @@ $f-card-corner-verticalOuter: 0.96em;
 			display: none;
 		}
 	}
+
+	.jack &,
+	.queen &,
+	.king & {
+		@extend %f-card-strut--faceSuit;
+		@extend %f-card-strut--enabled;
+	}
 }
 
 .b-card-middleInnerStrut {
 	@extend %f-card-strut;
-	@extend %f-card-strut;
-	@extend %f-card-strut--middle;
 	@extend %s-card-strut;
 
 	.three &,
 	.five &,
 	.nine &,
-	.jack &,
-	.queen &,
-	.king &,
 	.ace & {
 		@extend %f-card-strut--enabled;
 		@extend %f-card-strut--centre;
+		@extend %f-card-strut--middle;
+	}
+
+	.ace & {
+		@extend %s-card-strut--big;
 	}
 
 	.jack &,
 	.queen &,
-	.king &,
-	.ace & {
-		@extend %s-card-strut--big;
+	.king & {
+		@extend %f-card-strut--enabled;
+		@extend %f-card-strut--face;
+		@extend %s-card-strut--face;
 	}
 }
 
 .b-card-rightInnerStrut {
-	@extend %f-card-strut;
 	@extend %f-card-strut;
 	@extend %f-card-strut--right;
 	@extend %s-card-strut;
@@ -437,7 +544,6 @@ $f-card-corner-verticalOuter: 0.96em;
 }
 
 .b-card-rightOuterStrut {
-	@extend %f-card-strut;
 	@extend %f-card-strut;
 	@extend %f-card-strut--right;
 	@extend %s-card-strut;

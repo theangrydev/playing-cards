@@ -1,0 +1,5 @@
+$face-dir: "../assets/faces/";
+
+@mixin face($card) {
+	background-image: url($face-dir + $card + '.svg');
+}
