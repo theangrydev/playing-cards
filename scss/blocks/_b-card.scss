@@ -308,7 +308,7 @@ $f-card-corner-verticalOuter: 0.96em;
 	}
 
 	.heart & {
-		@include diamond;
+		@include heart;
 	}
 }
 
