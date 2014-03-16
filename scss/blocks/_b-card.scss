@@ -38,9 +38,11 @@ $middle-adjustment: -0.34em * $suit-size-ratio;
 
 // face adjustments
 $face-left-adjustment: -1em;
-$face-top-adjustment: -1.55em;
+$face-top-adjustment: -1.6em;
 $face-width: 2em;
 $face-height: 3.2em;
+$face-suit-vertical-adjustment: 0.73em;
+$face-suit-horizontal-adjustment: 0.29em;
 
 /* f-card-strut */
 %f-card-strut {
@@ -126,7 +128,6 @@ $face-height: 3.2em;
 
 	&%f-card-strut--face {
 		&:before {
-			position: absolute;
 			width: $face-width;
 			height: $face-height;
 			left: $face-left-adjustment;
@@ -135,6 +136,17 @@ $face-height: 3.2em;
 
 		&:after {
 			display: none;
+		}
+	}
+
+	&%f-card-strut--faceSuit {
+		&:before {
+			bottom: $face-suit-vertical-adjustment;
+			right: $face-suit-horizontal-adjustment;
+		}
+		&:after {
+			top: $face-suit-vertical-adjustment;
+			left: $face-suit-horizontal-adjustment;
 		}
 	}
 }
@@ -415,8 +427,8 @@ $f-card-corner-verticalOuter: 0.96em;
 
 .b-card-leftOuterStrut {
 	@extend %f-card-strut;
-	@extend %f-card-strut;
 	@extend %f-card-strut--left;
+	@extend %f-card-strut--outer;
 	@extend %s-card-strut;
 
 	.four &,
@@ -427,12 +439,10 @@ $f-card-corner-verticalOuter: 0.96em;
 	.nine &,
 	.ten & {
 		@extend %f-card-strut--enabled;
-		@extend %f-card-strut--outer;
 	}
 }
 
 .b-card-leftInnerStrut {
-	@extend %f-card-strut;
 	@extend %f-card-strut;
 	@extend %f-card-strut--left;
 	@extend %s-card-strut;
@@ -453,8 +463,6 @@ $f-card-corner-verticalOuter: 0.96em;
 
 .b-card-middleOuterStrut {
 	@extend %f-card-strut;
-	@extend %f-card-strut;
-	@extend %f-card-strut--middle;
 	@extend %s-card-strut;
 
 	.two &,
@@ -465,11 +473,13 @@ $f-card-corner-verticalOuter: 0.96em;
 
 	.seven &,
 	.eight & {
+		@extend %f-card-strut--middle;
 		@extend %f-card-strut--enabled;
 		@extend %f-card-strut--fitSix;
 	}
 
 	.ten & {
+		@extend %f-card-strut--middle;
 		@extend %f-card-strut--enabled;
 		@extend %f-card-strut--fitEight;
 	}
@@ -478,6 +488,13 @@ $f-card-corner-verticalOuter: 0.96em;
 		&:after {
 			display: none;
 		}
+	}
+
+	.jack &,
+	.queen &,
+	.king & {
+		@extend %f-card-strut--faceSuit;
+		@extend %f-card-strut--enabled;
 	}
 }
 
@@ -509,7 +526,6 @@ $f-card-corner-verticalOuter: 0.96em;
 
 .b-card-rightInnerStrut {
 	@extend %f-card-strut;
-	@extend %f-card-strut;
 	@extend %f-card-strut--right;
 	@extend %s-card-strut;
 
@@ -528,7 +544,6 @@ $f-card-corner-verticalOuter: 0.96em;
 }
 
 .b-card-rightOuterStrut {
-	@extend %f-card-strut;
 	@extend %f-card-strut;
 	@extend %f-card-strut--right;
 	@extend %s-card-strut;
