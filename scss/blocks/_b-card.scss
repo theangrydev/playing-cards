@@ -467,6 +467,7 @@ $f-card-corner-verticalOuter: 0.96em;
 
 	.two &,
 	.three & {
+		@extend %f-card-strut--middle;
 		@extend %f-card-strut--enabled;
 		@extend %f-card-strut--outer;
 	}
