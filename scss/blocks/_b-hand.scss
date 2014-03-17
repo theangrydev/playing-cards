@@ -1,0 +1,38 @@
+/*------------------------------------*\
+    #HAND
+\*------------------------------------*/
+/*
+	Markup:
+    <div class="b-hand ${fan}">
+    	<div class="b-hand-card"></div>
+    				...
+    	<div class="b-hand-card"></div>
+	</div>
+
+    Where:
+    ${fan} = fanned|row
+*/
+
+/* f-hand */
+%f-hand {
+
+}
+
+/* f-hand-card */
+%f-hand-card {
+
+}
+
+.b-hand {
+
+}
+
+.b-hand-card {
+	.fanned & {
+
+	}
+
+	.row & {
+
+	}
+}
