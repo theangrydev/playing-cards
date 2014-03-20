@@ -412,13 +412,7 @@ $f-card-corner-verticalOuter: 0.96em;
 	&%s-card-strut--face {
 		&:before {
 			content: '';
-			z-index: 6;
 			@extend %s-card-face;
-		}
-		&:after {
-			content: '';
-			background-color: green;
-			z-index: 4;
 		}
 	}
 }
