@@ -27,14 +27,17 @@
 @import "compass/css3/box-shadow";
 @import "compass/css3/border-radius";
 
+$f-card-width: 16em;
+$f-card-height: 22.4em;
+
 /* f-card */
 %f-card {
-	width: 16em;
-	height: 22.4em;
+	width: $f-card-width;
+	height: $f-card-height;
 	position: relative;
 	float: left;
 	z-index: 2;
-	margin: 0 1.2em 1.2em 0;
+	//margin: 0 1.2em 1.2em 0;
 	pointer-events: none;
 
 	&.flipped {

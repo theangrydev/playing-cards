@@ -10,12 +10,27 @@
 	</div>
 
     Where:
-    ${fan} = fanned|row
+    ${fan} = overlapping|spaced
 */
+
+$pop-out-height: 50px;
 
 /* f-hand */
 %f-hand {
+	position: absolute;
+}
 
+/* f-hand--preventSelectBottom */
+%f-hand--preventSelectBottom {
+	&:after {
+		width:100%;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: $pop-out-height;
+		z-index: 1000;
+		content: '';
+	}
 }
 
 /* f-hand-card */
@@ -23,16 +38,38 @@
 
 }
 
-.b-hand {
+/* f-hand-card--overlapping */
+%f-hand-card--overlapping {
+	display: inline-block;
+	margin-left: -13em;
+	z-index: 2;
+	position: relative;
+	@include transition(0.1s ease);
+	@include transition-delay(0.075s);
 
+	&:first-child {
+		margin-left: 0;
+	}
+
+	&:hover {
+		z-index: 999;
+		@include transform(translateY(-$pop-out-height));
+		@include transition(0.5s ease);
+	}
+}
+
+.b-hand {
+	@extend %f-hand;
+
+	&.overlapping {
+		@extend %f-hand--preventSelectBottom;
+	}
 }
 
 .b-hand-card {
-	.fanned & {
+	@extend %f-hand-card;
 
-	}
-
-	.row & {
-
+	.overlapping & {
+		@extend %f-hand-card--overlapping;
 	}
 }
