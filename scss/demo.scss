@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    DEMO.SCSS
+\*------------------------------------*/
+
+/**
+ * Here we start to pull in all the styles plus additional demo only styles.
+ */
+@import "../generated-styles/style.css";
+
+h1 {
+	color: red;
+}
+
+h2 {
+	color: red;
+	font-size: 30px;
+}
+
+$b-blockDemo-expandedHeight: 75%;
+$b-blockDemo-marginHeight: 0.8%;
+$b-blockDemo-headerHeight: 4%;
+$b-blockDemo-frameHeight: 100% - $b-blockDemo-headerHeight - $b-blockDemo-marginHeight - 0.1%;
+.b-blockDemo {
+	position: relative;
+	margin-bottom: $b-blockDemo-marginHeight;
+
+	&.current {
+		height: $b-blockDemo-expandedHeight;
+	}
+}
+
+.b-blockDemo-header {
+	height: $b-blockDemo-headerHeight;
+}
+.b-blockDemo-frame {
+	display: none;
+	width: 100%;
+
+	.current & {
+		border: 1px dotted green;
+		display: inline-block;
+		height: 95.1%;
+	}
+}
+
