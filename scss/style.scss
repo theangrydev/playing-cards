@@ -10,7 +10,6 @@
  * MIXINS...........Mixin helpers
  * RESET............normalize.css, reset, shared styles, etc.
  * BASE.............Basic HTML elements.
- * PATTERNS.........Objects, abstractions, design patterns.
  * BLOCKS...........Combining frames and skins, using patterns.
  */
 
@@ -60,16 +59,6 @@
  * `blockquote {}`.
  */
 @import "base/all";
-
-
-/*------------------------------------*\
-    #PATTERNS
-\*------------------------------------*/
-/**
- * These are design-free objects, abstractions and design patterns. These create
- * constructs that you lay your designs over.
- */
-@import "patterns/all";
 
 
 /*------------------------------------*\
