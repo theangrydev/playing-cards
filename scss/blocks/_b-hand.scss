@@ -38,11 +38,14 @@ $pop-out-height: 50px;
 
 }
 
+$hand-background-z: 2;
+$hand-foreground-z: $hand-background-z + 1;
+
 /* f-hand-card--overlapping */
 %f-hand-card--overlapping {
 	display: inline-block;
 	margin-left: -13em;
-	z-index: 2;
+	z-index: $hand-background-z;
 	position: relative;
 	@include transition(0.1s ease);
 	@include transition-delay(0.075s);
